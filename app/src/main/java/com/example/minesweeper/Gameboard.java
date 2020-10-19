@@ -33,6 +33,12 @@ public class Gameboard {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void initBoard(
             ) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                data[i][j] = new Node();
+            }
+        }
+
         Random rand = new Random();
         int rand_pos_bound = row * col;
         ArrayList<Integer> taken_pos = new ArrayList<Integer>();
