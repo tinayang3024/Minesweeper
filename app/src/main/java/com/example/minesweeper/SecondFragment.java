@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import javafx.util.Pair;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
@@ -31,6 +32,20 @@ public class SecondFragment extends Fragment {
 //            }
 //        });
     }
+
+
+//    public Gameboard update_board(Gameboard gameboard, Pair<Integer, Integer> input) {
+//
+//    }
+//
+//    public boolean[][] update_helper(Gameboard gameboard, Pair<Integer, Integer> current_loc, boolean[][] visited_map) {
+//        if visit_map[current_loc.{
+//            return visited_map;
+//        }
+//        if
+//
+//
+//    }
 
 
 }
