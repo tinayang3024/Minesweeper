@@ -1,9 +1,12 @@
 package com.example.minesweeper;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.util.Random;
 import java.lang.Math;
 import java.util.ArrayList;
-//import com.example.minesweeper.Node;
 
 public class Gameboard {
     int row = 9;
@@ -27,6 +30,7 @@ public class Gameboard {
         num_mines = target_num_mines;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void initBoard(
             ) {
         Random rand = new Random();
@@ -55,10 +59,17 @@ public class Gameboard {
 
             data[mine_row][mine_col].is_mine = true;
             for (int j = -1; j <= 1; j++) {
+                if ((mine_row == 0 && j == -1) || (mine_row == row - 1 && j == 1) ) {
+                    continue;
+                }
                 for (int k = -1; k <=1; k++) {
+                    if ((mine_col == 0 && k == -1) || (mine_col == col - 1 && k == 1) ) {
+                        continue;
+                    }
                     data[mine_row+j][mine_col+k].surrounding_mines++;
                 }
             }
+            data[mine_row][mine_col].surrounding_mines= -1;
         }
 
     }
