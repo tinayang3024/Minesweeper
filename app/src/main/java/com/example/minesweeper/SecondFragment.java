@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,6 +16,8 @@ enum GameStatus {
     LOSE,
     CONTINUE
 }
+
+import java.util.ArrayList;
 
 public class SecondFragment extends Fragment {
 
@@ -33,6 +37,32 @@ public class SecondFragment extends Fragment {
         }
     };
 
+    //Gameboard
+    Gameboard game = new Gameboard();
+
+    //on click logic
+    OnClickListener onClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+            if (view.getId() == R.id.button_reset){
+                //restart timer
+                start_time= System.currentTimeMillis();
+                timer_handler.postDelayed(timer_runnable, 0);
+                //restart game
+                game.initBoard();
+            }
+            else{
+                start_time= System.currentTimeMillis();
+                timer_handler.postDelayed(timer_runnable, 0);
+                //gameboard action
+                //call recursive function
+                //if not lose, call display function to update gameboard
+                //else, display lose page
+            }
+        }
+    };
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -48,15 +78,16 @@ public class SecondFragment extends Fragment {
         start_time = System.currentTimeMillis();
         timer = (TextView) view.findViewById(R.id.text_view_timer);
         timer_handler.postDelayed(timer_runnable, 0);
+        //game start
+        game.initBoard();
 
-        view.findViewById(R.id.button_reset).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //restart timer
-                start_time= System.currentTimeMillis();
-                timer_handler.postDelayed(timer_runnable, 0);
-            }
-        });
+        Button reset_button = (Button) view.findViewById(R.id.button_reset);
+        reset_button.setOnClickListener(onClickListener);
+        ArrayList<View> game_buttons = new ArrayList<View>();
+        view.findViewsWithText(game_buttons, "gameboard", View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION);
+        for (int i = 0; i < game_buttons.size(); i++) {
+            game_buttons.get(i).setOnClickListener(onClickListener);
+        }
     }
 
     public Gameboard update_board(Gameboard gameboard, int input_row, int input_col) {
