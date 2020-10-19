@@ -25,5 +25,4 @@ public class Gameboard {
         num_mines = target_num_mines;
     }
 
-
 }
