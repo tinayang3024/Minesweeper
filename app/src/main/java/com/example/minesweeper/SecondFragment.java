@@ -52,31 +52,28 @@ public class SecondFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            game.initBoard();
+            if (view.getId() == R.id.button_reset){
+                //restart timer
+                start_time= System.currentTimeMillis();
+                timer_handler.removeCallbacks(timer_runnable);
+                timer_handler.post(timer_zero);
+                //restart game
+                game.initBoard();
 //                first_click = true;
-            game.update_board(1,1);
-//            if (view.getId() == R.id.button_reset){
-//                //restart timer
-//                start_time= System.currentTimeMillis();
-//                timer_handler.removeCallbacks(timer_runnable);
-//                timer_handler.post(timer_zero);
-//                //restart game
-//                game.initBoard();
-////                first_click = true;
-//                game.update_board(1,1);
-//            }
-//            else {
-//                if (first_click) {
-//                    first_click = false;
-//                    start_time = System.currentTimeMillis();
-//                    timer_handler.removeCallbacks(timer_zero);
-//                    timer_handler.post(timer_runnable);
-//                }
-//                //gameboard action
-//                //call recursive function
-//                //if not lose, call display function to update gameboard
-//                //else, display lose page
-//            }
+                game.update_board(1,1);
+            }
+            else {
+                if (first_click) {
+                    first_click = false;
+                    start_time = System.currentTimeMillis();
+                    timer_handler.removeCallbacks(timer_zero);
+                    timer_handler.post(timer_runnable);
+                }
+                //gameboard action
+                //call recursive function
+                //if not lose, call display function to update gameboard
+                //else, display lose page
+            }
         }
     };
 
