@@ -64,7 +64,7 @@ def main():
         raise ValueError("Error: row or col is above maximum constrant")
 
     # Write the file
-    Filename = "fragment_second_temp.xml"
+    Filename = "app/src/main/res/layout/fragment_second_temp.xml"
     f = open(Filename, 'w')
 
     f.write(generate_boardxml(row,col))
