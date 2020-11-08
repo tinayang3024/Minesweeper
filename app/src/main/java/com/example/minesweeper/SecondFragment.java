@@ -114,7 +114,7 @@ public class SecondFragment extends Fragment {
 
                 }
                 if (game_status == GameStatus.LOSE){
-                    ((Button) game_buttons.get(row  * max_row + col )).setText("X");
+                    //((Button) game_buttons.get(row  * max_row + col )).setText("X");
                 }
             }
         }

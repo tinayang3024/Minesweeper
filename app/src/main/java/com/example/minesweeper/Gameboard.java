@@ -80,10 +80,12 @@ public class Gameboard {
     }
     public GameStatus update_board(int input_row, int input_col) {
         System.out.println("in update board");
+        System.out.println("ROW: " + input_row + "  COL:  " + input_col);
+        update_helper(input_row, input_col);
         GameStatus status = check_game_status(input_row, input_col);
         if (status == GameStatus.CONTINUE){
-            System.out.println("ROW: " + input_row + "  COL:  " + input_col);
-            update_helper(input_row, input_col);
+            //System.out.println("ROW: " + input_row + "  COL:  " + input_col);
+            //update_helper(input_row, input_col);
             System.out.println("!!!!!!CONTINUE!!!!!!");
             System.out.println("Mine Map:");
             print_board(true);
@@ -159,9 +161,7 @@ public class Gameboard {
         for (int row_ = 0; row_ < row; row_++){
             for (int col_ = 0; col_ < col; col_++){
                 if (!data[row_][col_].explored && !data[row_][col_].is_mine){
-                    if (row != input_row && col != input_col) {//at this point, did not update yet, so will be unexplored
-                        gameover = false;
-                    }
+                    gameover = false;
                 }
             }
         }
