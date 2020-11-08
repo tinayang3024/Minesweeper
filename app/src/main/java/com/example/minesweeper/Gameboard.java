@@ -78,56 +78,55 @@ public class Gameboard {
         }
 
     }
-    public Gameboard update_board(Gameboard gameboard, int input_row, int input_col) {
-        GameStatus status = check_game_status(gameboard, input_row, input_col);
-        update_helper(gameboard, input_row, input_row);
-        return gameboard;
+    public Gameboard update_board(int input_row, int input_col) {
+        GameStatus status = check_game_status(input_row, input_col);
+        update_helper(input_row, input_row);
     }
 
-    public void update_helper(Gameboard gameboard, int cur_row, int cur_col) {
+    public void update_helper(int cur_row, int cur_col) {
         // check if loc is valid
-        if (cur_row >= gameboard.row || cur_row < 0){
+        if (cur_row >= row || cur_row < 0){
             return;
         }
-        if (cur_col >= gameboard.col || cur_col < 0){
+        if (cur_col >= col || cur_col < 0){
             return;
         }
         // two base cases:
-        if (gameboard.data[cur_row][cur_col].explored){
+        if (data[cur_row][cur_col].explored){
             // 1. revisiting node
             return;
         }
-        if (gameboard.data[cur_row][cur_col].surrounding_mines > 0){
+        if (data[cur_row][cur_col].surrounding_mines > 0){
             // 2. hitting boundary
             return;
         }
         // regular case:
         // 1. mark as explored/visited
-        gameboard.data[cur_row][cur_col].explored = true;
+        data[cur_row][cur_col].explored = true;
         // 2. explore around
-        update_helper(gameboard, cur_row+1, cur_row+1);
-        update_helper(gameboard, cur_row-1, cur_row+1);
-        update_helper(gameboard, cur_row+1, cur_row-1);
-        update_helper(gameboard, cur_row-1, cur_row-1);
+        update_helper(cur_row+1, cur_row+1);
+        update_helper(cur_row-1, cur_row+1);
+        update_helper(cur_row+1, cur_row-1);
+        update_helper(cur_row-1, cur_row-1);
         return;
     }
-    public GameStatus check_game_status(Gameboard gameboard, int input_row, int input_col){
+    public GameStatus check_game_status(int input_row, int input_col){
         // 1. check if lose
-        if (gameboard.data[input_row][input_col].is_mine){
+        if (data[input_row][input_col].is_mine){
             return GameStatus.LOSE;
         }
 
         // 2. check if win
-        gameboard.data[input_row][input_col].explored = true;
+        data[input_row][input_col].explored = true;
         boolean gameover = true;
-        for (int row = 0; row < gameboard.row; row++){
-            for (int col = 0; col < gameboard.col; col++){
-                if (!gameboard.data[row][col].explored && !gameboard.data[row][col].is_mine){
+        for (int row = 0; row < row; row++){
+            for (int col = 0; col < col; col++){
+                if (!data[row][col].explored && !data[row][col].is_mine){
                     gameover = false;
                 }
             }
         }
-        gameboard.data[input_row][input_col].explored = false;
+        data[input_row][input_col].explored = false;
         if(gameover){
             return GameStatus.WIN;
         }else{
