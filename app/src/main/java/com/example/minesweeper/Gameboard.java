@@ -9,10 +9,10 @@ import java.lang.Math;
 import java.util.ArrayList;
 
 public class Gameboard {
-    int row = 9;
-    int col = 9;
-    int num_mines = 10;
-    Node[][] data = new Node[9][9];
+    int row = 3;
+    int col = 3;
+    int num_mines = 1;
+    Node[][] data = new Node[3][3];
 
     public void set_row(
             int target_row
@@ -78,12 +78,12 @@ public class Gameboard {
         }
 
     }
-    public void update_board(int input_row, int input_col) {
+    public GameStatus update_board(int input_row, int input_col) {
         System.out.println("in update board");
         GameStatus status = check_game_status(input_row, input_col);
         if (status == GameStatus.CONTINUE){
-            System.out.println("???");
-            update_helper(input_row, input_row);
+            System.out.println("ROW: " + input_row + "  COL:  " + input_col);
+            update_helper(input_row, input_col);
             System.out.println("!!!!!!CONTINUE!!!!!!");
             System.out.println("Mine Map:");
             print_board(true);
@@ -96,7 +96,7 @@ public class Gameboard {
                 System.out.println("!!!!!!YOU LOSE!!!!!!");
             }
         }
-        return;
+        return status;
     }
 
     public void update_helper(int cur_row, int cur_col) {
@@ -119,18 +119,23 @@ public class Gameboard {
             data[cur_row][cur_col].explored = true;
             return;
         }
+        if (data[cur_row][cur_col].is_mine == true){
+            // 3. hit mine
+            data[cur_row][cur_col].explored = true;
+            return;
+        }
         // regular case:
         // 1. mark as explored/visited
         data[cur_row][cur_col].explored = true;
         // 2. explore around
-        update_helper(cur_row+1, cur_row+1);
-        update_helper(cur_row-1, cur_row+1);
-        update_helper(cur_row+1, cur_row-1);
-        update_helper(cur_row-1, cur_row-1);
-        update_helper(cur_row+1, cur_row+1);
-        update_helper(cur_row-1, cur_row+1);
-        update_helper(cur_row+1, cur_row-1);
-        update_helper(cur_row-1, cur_row-1);
+        //update_helper(cur_row+1, cur_row+1);
+        //update_helper(cur_row-1, cur_row+1);
+        //update_helper(cur_row+1, cur_row-1);
+        //update_helper(cur_row-1, cur_row-1);
+        //update_helper(cur_row+1, cur_row+1);
+        //update_helper(cur_row-1, cur_row+1);
+        //update_helper(cur_row+1, cur_row-1);
+        //update_helper(cur_row-1, cur_row-1);
 
         update_helper(cur_row-1, cur_col+1);
         update_helper(cur_row-1, cur_col);
@@ -149,23 +154,39 @@ public class Gameboard {
         }
 
         // 2. check if win
-        data[input_row][input_col].explored = true;
+        //data[input_row][input_col].explored = true;
         boolean gameover = true;
         for (int row_ = 0; row_ < row; row_++){
             for (int col_ = 0; col_ < col; col_++){
                 if (!data[row_][col_].explored && !data[row_][col_].is_mine){
-                    gameover = false;
+                    if (row != input_row && col != input_col) {//at this point, did not update yet, so will be unexplored
+                        gameover = false;
+                    }
                 }
             }
         }
-        data[input_row][input_col].explored = false;
+        //data[input_row][input_col].explored = false;
         if(gameover){
             return GameStatus.WIN;
         }else{
             return GameStatus.CONTINUE;
         }
     }
-
+    public int check_status(int input_row, int input_col){
+        //case 1: unexplored, (flagged or not)
+        if (data[input_row][input_col].explored == false){
+            return -2;
+        }
+        //case 2a: explored, if surrounding mines != 0, display number
+          //case 2b: surrounding mines == 0, do not display
+        else if (data[input_row][input_col].is_mine == false){
+            return data[input_row][input_col].surrounding_mines;
+        }
+        //case 3: explored, mine
+        else{
+            return -1;
+        }
+    }
     public void print_board(boolean transparent){
         String str = "";
         System.out.println("-----------start--------------");

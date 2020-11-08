@@ -44,8 +44,11 @@ public class SecondFragment extends Fragment {
         }
     };
 
-    //Gameboard
+    //Gameboard, roll take user input
+    int max_row = 3;
+    int max_col = 3;
     Gameboard game = new Gameboard();
+    ArrayList<View> game_buttons = new ArrayList<View>();
     boolean first_click = true;
     //on click logic
     OnClickListener onClickListener = new View.OnClickListener() {
@@ -59,8 +62,13 @@ public class SecondFragment extends Fragment {
                 timer_handler.post(timer_zero);
                 //restart game
                 game.initBoard();
-//                first_click = true;
-                game.update_board(1,1);
+                //reset all button view
+                for (int i = 0; i < game_buttons.size(); i++) {
+                    System.out.println(game_buttons.get(i).getTag().toString());
+                    ((Button) game_buttons.get(i)).setText("");
+                    ((Button) game_buttons.get(i)).setEnabled(true);
+                }
+                first_click = true;
             }
             else {
                 if (first_click) {
@@ -69,10 +77,45 @@ public class SecondFragment extends Fragment {
                     timer_handler.removeCallbacks(timer_zero);
                     timer_handler.post(timer_runnable);
                 }
-                //gameboard action
-                //call recursive function
-                //if not lose, call display function to update gameboard
-                //else, display lose page
+                //gameboard action, get button ID -> row/col
+
+                String button_id = view.getTag().toString();
+                int row = Integer.parseInt(button_id.substring(0,3));
+                int col = Integer.parseInt(button_id.substring(3,6));
+                GameStatus game_status = game.update_board(row,col);
+
+                //loop through gameboard then update view
+
+                for (int i = 0; i < game_buttons.size(); i++) {
+                    //update button image and disable button if needed
+                    int status = game.check_status(i/max_row,i%max_col);
+                    if (status != -2){
+                        ((Button) game_buttons.get(i)).setEnabled(false);
+                    }
+                    if (status == -1){
+                        ((Button) game_buttons.get(i)).setText("X");
+                    }
+                    else if (status == 0){
+                        ((Button) game_buttons.get(i)).setText(Integer.toString(status));
+                    }
+                    else if (status > 0){
+                        ((Button) game_buttons.get(i)).setText(Integer.toString(status));
+                    }
+                }
+                if (game_status != GameStatus.CONTINUE){
+                    //disable all buttons
+                    for (int i = 0; i < game_buttons.size(); i++) {
+                        ((Button) game_buttons.get(i)).setEnabled(false);
+                    }
+                    start_time= System.currentTimeMillis();
+                    timer_handler.removeCallbacks(timer_runnable);
+                }
+                if (game_status == GameStatus.WIN){
+
+                }
+                if (game_status == GameStatus.LOSE){
+                    ((Button) game_buttons.get(row  * max_row + col )).setText("X");
+                }
             }
         }
     };
@@ -92,12 +135,11 @@ public class SecondFragment extends Fragment {
         start_time = System.currentTimeMillis();
         timer = (TextView) view.findViewById(R.id.text_view_timer);
         timer_handler.post(timer_zero);
-        //game start
+        //game start (take input)
         game.initBoard();
 
         Button reset_button = (Button) view.findViewById(R.id.button_reset);
         reset_button.setOnClickListener(onClickListener);
-        ArrayList<View> game_buttons = new ArrayList<View>();
         view.findViewsWithText(game_buttons, "gameboard", View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION);
         for (int i = 0; i < game_buttons.size(); i++) {
             game_buttons.get(i).setOnClickListener(onClickListener);
