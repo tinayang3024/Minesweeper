@@ -78,9 +78,25 @@ public class Gameboard {
         }
 
     }
-    public Gameboard update_board(int input_row, int input_col) {
+    public void update_board(int input_row, int input_col) {
+        System.out.println("in update board");
         GameStatus status = check_game_status(input_row, input_col);
-        update_helper(input_row, input_row);
+        if (status == GameStatus.CONTINUE){
+            System.out.println("???");
+            update_helper(input_row, input_row);
+            System.out.println("!!!!!!CONTINUE!!!!!!");
+            System.out.println("Mine Map:");
+            print_board(true);
+            System.out.println("Explored Map:");
+            print_board(false);
+        }else{
+            if (status == GameStatus.WIN){
+                System.out.println("!!!!!!YOU WIN!!!!!!");
+            }else{
+                System.out.println("!!!!!!YOU LOSE!!!!!!");
+            }
+        }
+        return;
     }
 
     public void update_helper(int cur_row, int cur_col) {
@@ -91,6 +107,8 @@ public class Gameboard {
         if (cur_col >= col || cur_col < 0){
             return;
         }
+        System.out.println("setting" + cur_row + "x" + cur_col);
+        System.out.println("explored " + data[cur_row][cur_col].explored);
         // two base cases:
         if (data[cur_row][cur_col].explored){
             // 1. revisiting node
@@ -98,6 +116,7 @@ public class Gameboard {
         }
         if (data[cur_row][cur_col].surrounding_mines > 0){
             // 2. hitting boundary
+            data[cur_row][cur_col].explored = true;
             return;
         }
         // regular case:
@@ -119,9 +138,9 @@ public class Gameboard {
         // 2. check if win
         data[input_row][input_col].explored = true;
         boolean gameover = true;
-        for (int row = 0; row < row; row++){
-            for (int col = 0; col < col; col++){
-                if (!data[row][col].explored && !data[row][col].is_mine){
+        for (int row_ = 0; row_ < row; row_++){
+            for (int col_ = 0; col_ < col; col_++){
+                if (!data[row_][col_].explored && !data[row_][col_].is_mine){
                     gameover = false;
                 }
             }
@@ -132,5 +151,39 @@ public class Gameboard {
         }else{
             return GameStatus.CONTINUE;
         }
+    }
+
+    public void print_board(boolean transparent){
+        String str = "";
+        System.out.println("-----------start--------------");
+        System.out.println("size: " + row + "x" + col);
+        str = "( ) ";
+        for (int row_ = 0; row_ < row; row_++){
+            str += (row_ + " ");
+        }
+        System.out.println(str+System.lineSeparator());
+        for (int row_ = 0; row_ < row; row_++){
+            str = "";
+            str += ("(" + row_ + ") ");
+            for (int col_ = 0; col_ < col; col_++){
+                if(transparent){
+                    if(data[row_][col_].is_mine == true){
+                        str = str.concat("M");
+                    }else{
+                        str = str.concat("_");
+                    }
+                }else{
+                    if(data[row_][col_].explored == true){
+                        str = str.concat(String.valueOf(data[row_][col_].surrounding_mines));
+                    }else{
+                        str = str.concat("_");
+                    }
+                }
+                str = str.concat(" ");
+            }
+            System.out.println(str+System.lineSeparator());
+        }
+        System.out.println("-----------end--------------");
+        return;
     }
 }
