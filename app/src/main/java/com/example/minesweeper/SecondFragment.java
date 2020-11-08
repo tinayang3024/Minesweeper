@@ -10,14 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import java.util.ArrayList;
 
 enum GameStatus {
     WIN,
     LOSE,
     CONTINUE
 }
-
-import java.util.ArrayList;
 
 public class SecondFragment extends Fragment {
 
@@ -32,14 +31,22 @@ public class SecondFragment extends Fragment {
             int seconds = (int) (ms/1000) % 60;
             int minutes = (int) (ms/1000) / 60;
 
-            timer.setText(String.format("Timer: %d:%02d", minutes, seconds));
+            timer.setText(String.format("Timer: %02d:%02d", minutes, seconds));
+            timer_handler.postDelayed(this,500);
+        }
+    };
+    Runnable timer_zero = new Runnable() {
+        @Override
+        public void run() {
+
+            timer.setText(String.format("Timer: 00:00"));
             timer_handler.postDelayed(this,500);
         }
     };
 
     //Gameboard
     Gameboard game = new Gameboard();
-
+    boolean first_click = true;
     //on click logic
     OnClickListener onClickListener = new View.OnClickListener() {
 
@@ -48,13 +55,19 @@ public class SecondFragment extends Fragment {
             if (view.getId() == R.id.button_reset){
                 //restart timer
                 start_time= System.currentTimeMillis();
-                timer_handler.postDelayed(timer_runnable, 0);
+                timer_handler.removeCallbacks(timer_runnable);
+                timer_handler.post(timer_zero);
                 //restart game
                 game.initBoard();
+                first_click = true;
             }
-            else{
-                start_time= System.currentTimeMillis();
-                timer_handler.postDelayed(timer_runnable, 0);
+            else {
+                if (first_click) {
+                    first_click = false;
+                    start_time = System.currentTimeMillis();
+                    timer_handler.removeCallbacks(timer_zero);
+                    timer_handler.post(timer_runnable);
+                }
                 //gameboard action
                 //call recursive function
                 //if not lose, call display function to update gameboard
@@ -77,7 +90,7 @@ public class SecondFragment extends Fragment {
         //timer start automatically
         start_time = System.currentTimeMillis();
         timer = (TextView) view.findViewById(R.id.text_view_timer);
-        timer_handler.postDelayed(timer_runnable, 0);
+        timer_handler.post(timer_zero);
         //game start
         game.initBoard();
 
