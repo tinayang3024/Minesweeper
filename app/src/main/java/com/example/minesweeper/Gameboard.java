@@ -127,6 +127,19 @@ public class Gameboard {
         update_helper(cur_row-1, cur_row+1);
         update_helper(cur_row+1, cur_row-1);
         update_helper(cur_row-1, cur_row-1);
+        update_helper(cur_row+1, cur_row+1);
+        update_helper(cur_row-1, cur_row+1);
+        update_helper(cur_row+1, cur_row-1);
+        update_helper(cur_row-1, cur_row-1);
+
+        update_helper(cur_row-1, cur_col+1);
+        update_helper(cur_row-1, cur_col);
+        update_helper(cur_row-1, cur_col-1);
+        update_helper(cur_row, cur_col+1);
+        update_helper(cur_row, cur_col-1);
+        update_helper(cur_row+1, cur_col+1);
+        update_helper(cur_row+1, cur_col);
+        update_helper(cur_row+1, cur_col-1);
         return;
     }
     public GameStatus check_game_status(int input_row, int input_col){
