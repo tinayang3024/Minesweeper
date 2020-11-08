@@ -44,11 +44,12 @@ def generate_boardxml(row, col):
         for j in range(col):
             info += "        <Button\n\
             android:id=\"@+id/button_%03d%03d\"\n\
+            android:tag=\"%03d%03d\"\n\
             android:layout_width=\"0dp\"\n\
             android:layout_height=\"match_parent\"\n\
             android:layout_weight=\"1\"\n\
             android:textSize=\"60sp\"\n\
-            android:contentDescription=\"gameboard\"/>\n" % (i,j)
+            android:contentDescription=\"gameboard\"/>\n" % (i,j,i,j)
         info += "   </LinearLayout>\n"
     info += "</LinearLayout>"
     return info
