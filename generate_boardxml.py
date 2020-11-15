@@ -66,11 +66,10 @@ def main():
 
     # Write the file
     Filename = "app/src/main/res/layout/fragment_second_temp.xml"
-    f = open(Filename, 'w')
+    
+    with open(Filename, 'w') as f:
+        f.write(generate_boardxml(row,col))
+        f.write('\n')
 
-    f.write(generate_boardxml(row,col))
-    f.write('\n')
-
-    f.close()
 
 main()
