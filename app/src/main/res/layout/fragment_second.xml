@@ -39,134 +39,1122 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="20dp"
             android:layout_centerInParent="true">
-            <TableRow
+           <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:weightSum="1"
                 android:layout_weight="0.5">
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:id="@+id/button_00"
+                        android:id="@+id/button_0000"
+                        android:tag = "0000"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:id="@+id/button_01"
+                        android:id="@+id/button_0001"
+                        android:tag = "0001"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:id="@+id/button_02"
+                        android:id="@+id/button_0002"
+                        android:tag = "0002"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-            </TableRow>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0003"
+                        android:tag = "0003"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0004"
+                        android:tag = "0004"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0005"
+                        android:tag = "0005"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0006"
+                        android:tag = "0006"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0007"
+                        android:tag = "0007"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0008"
+                        android:tag = "0008"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
+           <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:weightSum="1"
                 android:layout_weight="0.5">
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/button_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0100"
+                        android:tag = "0100"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/button_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0101"
+                        android:tag = "0101"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/button_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0102"
+                        android:tag = "0102"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-            </TableRow>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0103"
+                        android:tag = "0103"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0104"
+                        android:tag = "0104"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0105"
+                        android:tag = "0105"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0106"
+                        android:tag = "0106"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0107"
+                        android:tag = "0107"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0108"
+                        android:tag = "0108"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
+           <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:weightSum="1"
                 android:layout_weight="0.5">
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/button_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0200"
+                        android:tag = "0200"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/button_21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0201"
+                        android:tag = "0201"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-                <RelativeLayout
+               <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33">
+                    android:layout_weight="0.11">
                     <com.example.minesweeper.ResizableButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/button_22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0202"
+                        android:tag = "0202"
                         android:gravity="center|bottom"
                         android:paddingBottom="10dp"
-                        android:contentDescription="gameboard"/>
+                        android:contentDescription="@string/game_board"/>
                 </RelativeLayout>
-            </TableRow>
-        </TableLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0203"
+                        android:tag = "0203"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0204"
+                        android:tag = "0204"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0205"
+                        android:tag = "0205"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0206"
+                        android:tag = "0206"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0207"
+                        android:tag = "0207"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0208"
+                        android:tag = "0208"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+           <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0300"
+                        android:tag = "0300"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0301"
+                        android:tag = "0301"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0302"
+                        android:tag = "0302"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0303"
+                        android:tag = "0303"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0304"
+                        android:tag = "0304"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0305"
+                        android:tag = "0305"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0306"
+                        android:tag = "0306"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0307"
+                        android:tag = "0307"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0308"
+                        android:tag = "0308"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+           <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0400"
+                        android:tag = "0400"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0401"
+                        android:tag = "0401"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0402"
+                        android:tag = "0402"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0403"
+                        android:tag = "0403"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0404"
+                        android:tag = "0404"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0405"
+                        android:tag = "0405"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0406"
+                        android:tag = "0406"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0407"
+                        android:tag = "0407"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0408"
+                        android:tag = "0408"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+           <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0500"
+                        android:tag = "0500"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0501"
+                        android:tag = "0501"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0502"
+                        android:tag = "0502"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0503"
+                        android:tag = "0503"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0504"
+                        android:tag = "0504"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0505"
+                        android:tag = "0505"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0506"
+                        android:tag = "0506"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0507"
+                        android:tag = "0507"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0508"
+                        android:tag = "0508"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+           <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0600"
+                        android:tag = "0600"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0601"
+                        android:tag = "0601"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0602"
+                        android:tag = "0602"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0603"
+                        android:tag = "0603"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0604"
+                        android:tag = "0604"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0605"
+                        android:tag = "0605"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0606"
+                        android:tag = "0606"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0607"
+                        android:tag = "0607"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0608"
+                        android:tag = "0608"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+           <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0700"
+                        android:tag = "0700"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0701"
+                        android:tag = "0701"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0702"
+                        android:tag = "0702"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0703"
+                        android:tag = "0703"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0704"
+                        android:tag = "0704"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0705"
+                        android:tag = "0705"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0706"
+                        android:tag = "0706"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0707"
+                        android:tag = "0707"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0708"
+                        android:tag = "0708"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+           <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0800"
+                        android:tag = "0800"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0801"
+                        android:tag = "0801"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0802"
+                        android:tag = "0802"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0803"
+                        android:tag = "0803"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0804"
+                        android:tag = "0804"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0805"
+                        android:tag = "0805"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0806"
+                        android:tag = "0806"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0807"
+                        android:tag = "0807"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+               <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11">
+                    <com.example.minesweeper.ResizableButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/button_0808"
+                        android:tag = "0808"
+                        android:gravity="center|bottom"
+                        android:paddingBottom="10dp"
+                        android:contentDescription="@string/game_board"/>
+                </RelativeLayout>
+           </TableRow>
+
+       </TableLayout>
     </RelativeLayout>
 </LinearLayout>

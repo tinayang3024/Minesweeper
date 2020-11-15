@@ -1,6 +1,6 @@
 import argparse, sys
 
-MAX_ROW_COL = 1000
+MAX_ROW_COL = 10
 
 def generate_boardxml(row, col):
     # Fixed info
@@ -34,24 +34,42 @@ def generate_boardxml(row, col):
             android:layout_centerVertical=\"true\"\n\
             android:layout_marginEnd=\"33dp\"\n\
             android:text=\"reset\" />\n\
-    </RelativeLayout>\n"
+    </RelativeLayout>\n\
+    <RelativeLayout\n\
+        android:layout_width=\"match_parent\"\n\
+        android:layout_height=\"match_parent\">\n\
+        <TableLayout\n\
+            android:layout_width=\"fill_parent\"\n\
+            android:layout_height=\"wrap_content\"\n\
+            android:layout_marginLeft=\"15dp\"\n\
+            android:layout_marginRight=\"15dp\"\n\
+            android:layout_marginBottom=\"20dp\"\n\
+            android:layout_centerInParent=\"true\">\n"
     # Info generated based on row and col
     for i in range(row):
-        info += "    <LinearLayout\n\
-        android:layout_width=\"match_parent\"\n\
-        android:layout_height=\"0dp\"\n\
-        android:layout_weight=\"1\">\n"
+        info += "           <TableRow\n\
+                android:layout_width=\"match_parent\"\n\
+                android:layout_height=\"0dp\"\n\
+                android:weightSum=\"1\"\n\
+                android:layout_weight=\"0.5\">\n"
         for j in range(col):
-            info += "        <Button\n\
-            android:id=\"@+id/button_%03d%03d\"\n\
-            android:tag=\"%03d%03d\"\n\
-            android:layout_width=\"0dp\"\n\
-            android:layout_height=\"match_parent\"\n\
-            android:layout_weight=\"1\"\n\
-            android:textSize=\"60sp\"\n\
-            android:contentDescription=\"gameboard\"/>\n" % (i,j,i,j)
-        info += "   </LinearLayout>\n"
-    info += "</LinearLayout>"
+            info += "               <RelativeLayout\n\
+                    android:layout_width=\"0dp\"\n\
+                    android:layout_height=\"wrap_content\"\n\
+                    android:layout_weight=\"%.2f\">\n\
+                    <com.example.minesweeper.ResizableButton\n\
+                        android:layout_width=\"wrap_content\"\n\
+                        android:layout_height=\"0dp\"\n\
+                        android:id=\"@+id/button_%02d%02d\"\n\
+                        android:tag = \"%02d%02d\"\n\
+                        android:gravity=\"center|bottom\"\n\
+                        android:paddingBottom=\"10dp\"\n\
+                        android:contentDescription=\"@string/game_board\"/>\n\
+                </RelativeLayout>\n" % (1/row,i,j,i,j)
+        info += "           </TableRow>\n\n"
+    info += "       </TableLayout>\n\
+    </RelativeLayout>\n\
+</LinearLayout>"
     return info
 
 
