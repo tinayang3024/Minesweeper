@@ -170,7 +170,7 @@ public class Gameboard {
             return -2;
         }
         //case 2a: explored, if surrounding mines != 0, display number
-          //case 2b: surrounding mines == 0, do not display
+        //case 2b: surrounding mines == 0, do not display
         else if (data[input_row][input_col].is_mine == false){
             return data[input_row][input_col].surrounding_mines;
         }
@@ -214,7 +214,9 @@ public class Gameboard {
     }
 
     public boolean flag_node(int row, int col){
+        System.out.println("was " + data[row][col].is_flagged);
         data[row][col].is_flagged = !data[row][col].is_flagged;
+        System.out.println("now " + data[row][col].is_flagged);
         return data[row][col].is_flagged;
     }
 }

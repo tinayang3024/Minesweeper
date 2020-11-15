@@ -85,8 +85,13 @@ public class SecondFragment extends Fragment {
                 String button_id = view.getTag().toString();
                 int row = Integer.parseInt(button_id.substring(0,3));
                 int col = Integer.parseInt(button_id.substring(3,6));
+                System.out.println("flag is " + flag);
                 if (flag) {//do not update board
-                    ((Button) game_buttons.get(row  * max_row + col )).setText("^");
+                    if (game.flag_node(row, col)) {
+                        ((Button) game_buttons.get(row  * max_row + col)).setText("^");
+                    } else {
+                        ((Button) game_buttons.get(row  * max_row + col)).setText("");
+                    }
                 }
                 else {
                     GameStatus game_status = game.update_board(row, col);
@@ -103,8 +108,10 @@ public class SecondFragment extends Fragment {
                             ((Button) game_buttons.get(i)).setText("X");
                         } else if (status == 0) {
                             ((Button) game_buttons.get(i)).setText(Integer.toString(status));
+                            ((Button) game_buttons.get(i)).setEnabled(false);
                         } else if (status > 0) {
                             ((Button) game_buttons.get(i)).setText(Integer.toString(status));
+                            ((Button) game_buttons.get(i)).setEnabled(false);
                         }
                     }
                     if (game_status != GameStatus.CONTINUE) {
@@ -161,12 +168,12 @@ public class SecondFragment extends Fragment {
                     // The toggle is enabled
                     flag = true;
                     num_mines --;
-                    System.out.println("flagged");
+//                    System.out.println("flagged");
                 } else {
                     // The toggle is disabled
                     flag = false;
                     num_mines ++;
-                    System.out.println("unflagged");
+//                    System.out.println("unflagged");
                 }
             }
         });
