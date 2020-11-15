@@ -1,4 +1,4 @@
-import sys
+import argparse, sys
 
 MAX_ROW_COL = 1000
 
@@ -56,21 +56,24 @@ def generate_boardxml(row, col):
 
 
 def main():
-    # Get command line arguments and error checking
-    if len(sys.argv) < 3:
-        raise ValueError("Error: row or col is not provided")
-    row = int(sys.argv[1])
-    col = int(sys.argv[2])
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--row', type=int, required=True, help="num of rows")
+    parser.add_argument('--col', type=int, required=True, help="num of columns")
+    
+    args = parser.parse_args()
+    row = args.row
+    col = args.col
+
     if row > MAX_ROW_COL or col > MAX_ROW_COL:
         raise ValueError("Error: row or col is above maximum constrant")
 
     # Write the file
     Filename = "app/src/main/res/layout/fragment_second_temp.xml"
-    f = open(Filename, 'w')
 
-    f.write(generate_boardxml(row,col))
-    f.write('\n')
-
-    f.close()
+    with open(Filename, 'w') as f:
+        f.write(generate_boardxml(row,col))
+        f.write('\n')
 
 main()
+
+
