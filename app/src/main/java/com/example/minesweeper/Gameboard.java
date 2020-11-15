@@ -130,14 +130,6 @@ public class Gameboard {
         // 1. mark as explored/visited
         data[cur_row][cur_col].explored = true;
         // 2. explore around
-        //update_helper(cur_row+1, cur_row+1);
-        //update_helper(cur_row-1, cur_row+1);
-        //update_helper(cur_row+1, cur_row-1);
-        //update_helper(cur_row-1, cur_row-1);
-        //update_helper(cur_row+1, cur_row+1);
-        //update_helper(cur_row-1, cur_row+1);
-        //update_helper(cur_row+1, cur_row-1);
-        //update_helper(cur_row-1, cur_row-1);
 
         update_helper(cur_row-1, cur_col+1);
         update_helper(cur_row-1, cur_col);
@@ -219,5 +211,10 @@ public class Gameboard {
         }
         System.out.println("-----------end--------------");
         return;
+    }
+
+    public boolean flag_node(int row, int col){
+        data[row][col].is_flagged = !data[row][col].is_flagged;
+        return data[row][col].is_flagged;
     }
 }
