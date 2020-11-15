@@ -50,6 +50,7 @@ public class SecondFragment extends Fragment {
     int max_row = 3;
     int max_col = 3;
     int num_mines = 1;
+    TextView remain_mines;
     Gameboard game = new Gameboard();
     ArrayList<View> game_buttons = new ArrayList<View>();
     boolean first_click = true;
@@ -88,9 +89,13 @@ public class SecondFragment extends Fragment {
                 System.out.println("flag is " + flag);
                 if (flag) {//do not update board
                     if (game.flag_node(row, col)) {
+                        num_mines --;
                         ((Button) game_buttons.get(row  * max_row + col)).setText("^");
+                        remain_mines.setText("remaining mines:"+Integer.toString(num_mines));
                     } else {
+                        num_mines ++;
                         ((Button) game_buttons.get(row  * max_row + col)).setText("");
+                        remain_mines.setText("remaining mines:"+Integer.toString(num_mines));
                     }
                 }
                 else {
@@ -151,7 +156,7 @@ public class SecondFragment extends Fragment {
         timer_handler.post(timer_zero);
         //game start (take input)
         game.initBoard();
-        final TextView remain_mines = (TextView) view.findViewById(R.id.text_view_remaining_mines);
+        remain_mines = (TextView) view.findViewById(R.id.text_view_remaining_mines);
         remain_mines.setText("remaining mines:"+Integer.toString(num_mines));
 
         Button reset_button = (Button) view.findViewById(R.id.button_reset);
@@ -167,12 +172,10 @@ public class SecondFragment extends Fragment {
                 if (isChecked) {
                     // The toggle is enabled
                     flag = true;
-                    num_mines --;
 //                    System.out.println("flagged");
                 } else {
                     // The toggle is disabled
                     flag = false;
-                    num_mines ++;
 //                    System.out.println("unflagged");
                 }
             }
