@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.CompoundButton;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
@@ -43,10 +45,11 @@ public class SecondFragment extends Fragment {
             timer_handler.postDelayed(this,500);
         }
     };
-
+    boolean flag = false;
     //Gameboard, roll take user input
     int max_row = 3;
     int max_col = 3;
+    int num_mines = 1;
     Gameboard game = new Gameboard();
     ArrayList<View> game_buttons = new ArrayList<View>();
     boolean first_click = true;
@@ -82,43 +85,47 @@ public class SecondFragment extends Fragment {
                 String button_id = view.getTag().toString();
                 int row = Integer.parseInt(button_id.substring(0,3));
                 int col = Integer.parseInt(button_id.substring(3,6));
-                GameStatus game_status = game.update_board(row,col);
-
-                //loop through gameboard then update view
-
-                for (int i = 0; i < game_buttons.size(); i++) {
-                    //update button image and disable button if needed
-                    int status = game.check_status(i/max_row,i%max_col);
-                    if (status != -2){
-                        ((Button) game_buttons.get(i)).setEnabled(false);
-                    }
-                    if (status == -1){
-                        ((Button) game_buttons.get(i)).setText("X");
-                    }
-                    else if (status == 0){
-                        ((Button) game_buttons.get(i)).setText(Integer.toString(status));
-                    }
-                    else if (status > 0){
-                        ((Button) game_buttons.get(i)).setText(Integer.toString(status));
-                    }
+                if (flag) {//do not update board
+                    ((Button) game_buttons.get(row  * max_row + col )).setText("^");
                 }
-                if (game_status != GameStatus.CONTINUE){
-                    //disable all buttons
+                else {
+                    GameStatus game_status = game.update_board(row, col);
+
+                    //loop through gameboard then update view
+
                     for (int i = 0; i < game_buttons.size(); i++) {
-                        ((Button) game_buttons.get(i)).setEnabled(false);
+                        //update button image and disable button if needed
+                        int status = game.check_status(i / max_row, i % max_col);
+                        if (status != -2) {
+                            ((Button) game_buttons.get(i)).setEnabled(false);
+                        }
+                        if (status == -1) {
+                            ((Button) game_buttons.get(i)).setText("X");
+                        } else if (status == 0) {
+                            ((Button) game_buttons.get(i)).setText(Integer.toString(status));
+                        } else if (status > 0) {
+                            ((Button) game_buttons.get(i)).setText(Integer.toString(status));
+                        }
                     }
-                    start_time= System.currentTimeMillis();
-                    timer_handler.removeCallbacks(timer_runnable);
-                }
-                if (game_status == GameStatus.WIN){
+                    if (game_status != GameStatus.CONTINUE) {
+                        //disable all buttons
+                        for (int i = 0; i < game_buttons.size(); i++) {
+                            ((Button) game_buttons.get(i)).setEnabled(false);
+                        }
+                        start_time = System.currentTimeMillis();
+                        timer_handler.removeCallbacks(timer_runnable);
+                    }
+                    if (game_status == GameStatus.WIN) {
 
-                }
-                if (game_status == GameStatus.LOSE){
-                    //((Button) game_buttons.get(row  * max_row + col )).setText("X");
+                    }
+                    if (game_status == GameStatus.LOSE) {
+                        //((Button) game_buttons.get(row  * max_row + col )).setText("X");
+                    }
                 }
             }
         }
     };
+
 
     @Override
     public View onCreateView(
@@ -137,6 +144,8 @@ public class SecondFragment extends Fragment {
         timer_handler.post(timer_zero);
         //game start (take input)
         game.initBoard();
+        final TextView remain_mines = (TextView) view.findViewById(R.id.text_view_remaining_mines);
+        remain_mines.setText("remaining mines:"+Integer.toString(num_mines));
 
         Button reset_button = (Button) view.findViewById(R.id.button_reset);
         reset_button.setOnClickListener(onClickListener);
@@ -144,6 +153,24 @@ public class SecondFragment extends Fragment {
         for (int i = 0; i < game_buttons.size(); i++) {
             game_buttons.get(i).setOnClickListener(onClickListener);
         }
+        Switch flag_button = (Switch) view.findViewById(R.id.flag_button);
+        flag_button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked) {
+                    // The toggle is enabled
+                    flag = true;
+                    num_mines --;
+                    System.out.println("flagged");
+                } else {
+                    // The toggle is disabled
+                    flag = false;
+                    num_mines ++;
+                    System.out.println("unflagged");
+                }
+            }
+        });
+
     }
 
 
